@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><%=title%></title>
+    <meta name="author" content=<%=author%>>
+    <meta name="description" content=<%=description%>>
+    <meta name="keywords" content=<%=keywords%>>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <script type="text/javascript" src="/public/jquery.min.js"></script>
+    <link rel="stylesheet" href="/public/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <script type="text/javascript" src="/public/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+
+    <!--<script src="http://www.jq22.com/jquery/html5.min.js"></script>-->
+    <style type="text/css">
+        body{
+            position: absolute;
+            bottom: -1000px;
+            top: 0px;
+            right: 0px;
+            left: 0px;
+        }
+        #templateBody{
+            background: -webkit-radial-gradient(#054fae 5%, #122a54 10%, #101e46 15%, #0a163c 70%); /* Safari 5.1 - 6.0 */
+            background: -o-radial-gradient(#054fae 5%, #122a54 10%, #101e46 15%, #0a163c 70%); /* Opera 11.6 - 12.0 */
+            background: -moz-radial-gradient(#054fae 5%, #122a54 10%, #101e46 15%, #0a163c 70%); /* Firefox 3.6 - 15 */
+            background: radial-gradient( #054fae 5%, #122a54 10%, #101e46 15%, #0a163c 70%); /* 标准的语法 */
+
+            background-repeat: no-repeat;
+            height: 100%;
+            width: 100%;
+        }
+        .lottery .col-md-1 >div{
+            overflow: hidden;
+            text-align: center;
+            border:6px solid #ddd;
+            border-image: -webkit-linear-gradient(#1b8fb4,#084ba4) 30 30;
+            border-image: -moz-linear-gradient(#1b8fb4,#084ba4) 30 30;
+            border-image: -o-radial-gradient(#1b8fb4,#084ba4) 30 30;
+            border-image: linear-gradient(#1b8fb4,#084ba4) 30 30;
+        }
+        .lottery .col-md-1 >div >div{
+        }
+        .lotteryTable{
+            display: inline-block;
+            padding: 5px;
+
+            color: #e3e3e3;
+            text-align: center;
+        }
+        .lotteryTable >tbody:nth-child(2) >tr:nth-child(1){
+            background-color: #9eadc2;
+            line-height: 40px;
+        }
+        .lotteryTable >tbody:nth-child(2) >tr:nth-child(1) >th{
+            text-align: center;
+        }
+        .lotteryTable >tbody:nth-child(3) >tr{
+            line-height: 40px;
+        }
+        .lotteryTable >tbody:nth-child(3) >tr td{
+            border-right: 1px solid rgba(244, 245, 255, 0.71);
+            border-bottom: 1px solid rgba(244, 245, 255, 0.71);
+        }
+    </style>
+</head>
+<body>
+<%- body%>
+</body>
+</html>

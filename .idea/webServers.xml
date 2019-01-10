@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="b14494ae-8167-41d3-bfcb-f8006eddaeb4" name="txffc" url="http://198.44.226.121">
+        <fileTransfer host="198.44.226.121" port="22" rootFolder="/node/cp/txffc" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

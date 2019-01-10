@@ -1,0 +1,87 @@
+<div id="templateBody">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12" style="margin-top: 60px">
+                <h2 style="text-align: center;font-weight: bold;color: #9eadc2">腾讯在线人数统计</h2>
+                <h4 style="text-align: center;font-weight: bold;color: #9eadc2;margin-top: 30px"><%= contentData.data[0].createTime %> 分腾讯在线人数</h4>
+            </div>
+        </div>
+        <div class="row lottery" style="margin-top: 60px;">
+            <div style="display: flex;flex-direction: row;align-items: center;justify-content: center">
+                <% for(var i=0; i<txOnlineNumber.length; i++){ %><div class="col-md-1">
+                <div>
+                    <div style="font-size: 76px;color: #84e7fa"><%= txOnlineNumber[i] %></div>
+                </div>
+            </div><%} %>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12" style="margin-top: 60px">
+                <h2 style="text-align: center;font-weight: bold;color: #9eadc2">计算结果</h2>
+            </div>
+        </div>
+        <div class="row lottery" style="margin-top: 60px;">
+            <div style="display: flex;flex-direction: row;align-items: center;justify-content: center">
+                <% for(var i=0; i<lotteryNumber.length; i++){ %><div class="col-md-1">
+                <div>
+                    <div style="font-size: 76px;color: #84e7fa"><%= lotteryNumber[i] %></div>
+                </div>
+            </div><%} %>
+            </div>
+        </div>
+
+        <div id="tableData" class="row" style="margin-top: 60px;margin-bottom: 60px">
+            <div class="col-md-12 options" >
+                <div style="">
+                    <table class="lotteryTable">
+                      <tr>
+                            <th rowspan="5" colspan="5" style="text-align: center;font-weight: bold;color: #9eadc2;font-size: 26px;line-height: 60px">详细数据</th>
+                        </tr>
+                        <tbody>
+                        <tr>
+                            <th width="10%">期数</th>
+                            <th width="10%">计算结果</th>
+                            <th width="10%">时间</th>
+                            <th width="10%">腾讯在线人数</th>
+                            <th width="10%">波动值</th>
+                        </tr>
+                        </tbody>
+                   <tbody>
+                   <% for(var i=0;i<contentData.data.length;i++){%>
+                   <tr style="background-color: #084ba4">
+                       <td><%= contentData.data[i].lotteryDate %>期</td>
+                       <td><%= contentData.data[i].lotteryNumber %></td>
+                       <td><%= contentData.data[i].createTime %></td>
+                       <td><%= contentData.data[i].txOnlineNumber %></td>
+                       <td><%= contentData.data[i].fluctuateNumber %></td>
+                   </tr>
+                   <% } %>
+                   </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div style="float: right;padding-top: 10px">
+                    <form id="crawlingId" action="" method="get">
+                        <button class="btn btn-primary btn-sm" type="button"  onclick="check(1)">1</button>
+                        <button class="btn btn-primary btn-sm" type="button"  onclick="check(2)">2</button>
+                        <button class="btn btn-primary btn-sm" type="button"  onclick="check(3)">3</button>
+                        <button class="btn btn-primary btn-sm" type="button"  onclick="check(4)">4</button>
+                        <button class="btn btn-primary btn-sm" type="button"  onclick="check(5)">5</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    var tableData = '<%= tableData%>'
+    function check(val) {
+        document.getElementById('crawlingId').action = '/index.html/'+val+''
+        $("#crawlingId").submit();
+    }
+        if(tableData == 'tableData'){
+            $('html,body').animate({scrollTop:$('#'+tableData).offset().top},300)
+        }
+</script>
