@@ -23,7 +23,7 @@ app.use((ctx, next )=> {
     return next().then(() => {
         const ms = Date.now() - start;
         if (ctx.response.status != 200){
-                ctx.redirect('/index.html');
+                ctx.body = '404';
         }
         console.log(`${ctx.method} ${ctx.url} - ${ms}ms`);
     });
